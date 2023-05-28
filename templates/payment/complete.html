@@ -1,0 +1,39 @@
+{% extends 'basic.html'%}
+
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="=refresh" content=5; url="{% url 'home' %}">
+    <title>Payment status</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="messages container mt-2">
+            {% if messages %}
+                {% for message in messages %}
+                    <div {% if message.tags %}class="alert alert-{{message.tags}} {% endif %}">
+                        {{message}}
+                    </div>                
+                {% endfor %}
+
+            {% endif %}
+        </div>
+
+        <div class="messages container mt-2">
+            <h4>
+                Click Here To Proceed                     
+            </h4>
+                 <a href="{% url 'home' %}"><button type="submit" class="btn btn-warning"> Home </button></a>   
+              </form>
+        </div>
+    </div>
+
+
+
+{% endblock %}

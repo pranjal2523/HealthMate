@@ -1,0 +1,103 @@
+{% extends "basic.html" %}
+{% load static %}
+
+{% block head %}
+<style>
+.input-box{
+    margin-top: 2vh;
+    height: 7vh;
+    padding: 10px;
+    width: 18vw;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-size: 15px;
+    box-shadow: 4px 4px 10px #000,
+                -4px -4px 10px #000
+
+}
+.col-6{
+    margin-top: 5vh;
+    max-width: 100%;    
+}
+.heading{
+    -webkit-text-fill-color: rgb(27, 35, 35);
+    -webkit-text-stroke: 1px;
+}
+.row-but{
+    margin-top: 8vh;
+    display: block;
+}
+.row-button{
+    margin-left: 40%;
+
+}
+.col-6{
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<div class="row">
+    <div class="col-6">
+        <div class="card-body">
+            <h4 class="card-title">Patient name : {{appoint.patient.name}}</h4>
+            <p class="card-text">Patient ID - {{appoint.patient.user_id}}</p>
+            <p class="card-text">Patient email - {{appoint.patient.user.email}}</p>
+            <p class="card-text">patient phone no. - {{appoint.patient.mobile_no}}</p>
+            <h4 class="card-title">Predicted disease : {{appoint.diseaseinfo.diseasename}}</h4>
+
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card-body" style="display: inline-block;">
+            <h4 class="card-title">Doctor name : {{appoint.doctor.name}}</h4>
+            <p class="card-text">Doctor ID - {{appoint.doctor.user_id}}</p>
+            <p class="card-text">Doctor email - {{appoint.doctor.user.email}}</p>
+            <p class="card-text">Doctor phone no. - {{appoint.doctor.mobile_no}}</p>
+            <p class="card-text">Doctor rating is - {{appoint.doctor.rating}}/5</p>
+        </div>
+    </div>
+</div>
+
+<form action="{% url 'payment:updateappointview' appoint.id %}" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-4">
+            <h5 class="heading">Select Preferred Appointment Date</h5>
+                <input name="seldate" type="date" class="input-box" required=""/>
+        </div>
+        
+        <div class="col-4">
+            <h5 class="heading">Select Preferred Time Slot</h5>
+            <select class="input-box" name="seltime" name="Time Slot" required="">
+                        <option value="">Time Slot</option>
+                        <option value="8:00:00">8:00 - 9:00</option>
+                        <option value="9:00:00">9:00 - 10:00</option>
+                        <option value="10:00:00">10:00 - 11:00</option>
+                        <option value="11:00:00">11:00 - 12:00</option>
+                        <option value="12:00:00">12:00 - 13:00</option>
+                        <option value="13:00:00">13:00 - 14:00</option>
+                        <option value="14:00:00">14:00 - 15:00</option>
+                    </select>
+        </div>
+        
+        <div class="col-4">
+            <h5 class="heading">Appointent Charges</h5>
+                <h5 style="padding-top: 15px; padding-left: 30%; " class="input-box"><b>₹ 300 </b></h5>
+        </div>
+
+
+    </div>
+    <div class="row row-but">
+        <button type="submit" class="btn btn-danger row-button">Proceed to Payment</button>
+    </div>
+</form>
+
+</div>
+{% endblock %}
