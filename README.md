@@ -17,12 +17,15 @@ https://www.kaggle.com/neelima98/disease-prediction-using-machine-learning
 
 ### Some Sceenshots of This Webapp -
 
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture1.PNG)
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture2.PNG)
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture3.PNG)
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture4.PNG)
-![](https://github.com/anuj-glitch/Disease-Prediction-using-Django-and-machine-learning/blob/master/screenshots/Capture5.PNG)
-
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/ppt1.png)
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/ppt2.png)
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/Screenshot%202023-05-26%20232103.png)
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pptpredictpage.png)
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pttpredictview.png)
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pttconsultview.png)
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pptbookapointview.png)
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pptdrconsultview.png)
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pttchatview.png)
 
 ### ***Go to the [Readme.pdf](Readme.pdf) file for detailed information about the project & screenshots.***
 and if you like this project, do give it a "Star" Thank you..
