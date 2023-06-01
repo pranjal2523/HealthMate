@@ -139,7 +139,7 @@ def complete(request):
             #v_id = pay_data['val_id']
             #tran_id  = pay_data['bank_tran_id']             
             messages.success(request, "Your payment is successfull")
-            return HttpResponseRedirect(reverse("payment:complete"))
+            return HttpResponseRedirect(reverse("payment:appoint"))
         elif status == 'FAILED':
             messages.success(request, "Your payment is Unsuccessfull")
     #return redirect("app_shop:home")
@@ -171,6 +171,26 @@ def patappointview(request):
 #       return render(request,'patient/patient_ui/profile.html')
 
 
+def drappointview(request):
+    if request.method == 'GET':
+
+      if request.user.is_authenticated:
+        #doc_obj = []
+        doctorusername = request.session['doctorusername']
+        duser = User.objects.get(username=doctorusername)
+        appoint_obj = Appointment.objects.filter(doctor_id=duser.id)
+        
+        #print(appoint_obj[0])
+        #for doc_val in appoint_obj:
+        #    doc = doctor.objects.get(pk = doc_val.doctor_id)
+        #    doc_obj.append(doc)
+        #print(appoint_obj[0].doctor_id)
+        #print(doc_obj[0].name)
+
+        return render(request,'payment/drappoint.html' , {"appoint":appoint_obj})
+
+      else :
+        return redirect('home')
 
 
 

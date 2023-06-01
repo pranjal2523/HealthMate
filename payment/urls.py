@@ -9,7 +9,8 @@ urlpatterns=[
     path('update_appoint_view/<int:appoint_id>', views.update_appointview, name="updateappointview"),
     path('pay/<int:appoint_id>', views.payment, name="pay"),
     path('complete/', views.complete, name="complete"),
-    path('appoint/', views.patappointview, name="appoint"),
+    path('appointment/', views.patappointview, name="appoint"),
+    path('appointments/', views.drappointview, name="drappoint"),
     #path('purchased/<tran_id>/', views.purchased, name="purchased"), 
 
 #    path('checkout/', views.checkout, name="checkout"), 

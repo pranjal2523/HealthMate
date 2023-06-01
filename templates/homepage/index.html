@@ -4,7 +4,20 @@
 
  
 {% block head %}
-
+<style>
+  .italic{
+    font-weight: 1000;
+    color: brown;
+  }
+  .imgcontainer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .row{
+    justify-content: space-between;
+    justify-content: space-around;
+  }
+</style>
 
 {% endblock %}
 
@@ -72,15 +85,83 @@
         </div>
         </div>
       </form>
-</div>
-
-
-    
-
-    {% endif %}
+      
+      
+      {% endif %}
+    </div>
 
 <br><br>
 
+{% if user.is_authenticated %}
+
+  {% if user.patient %}
+  <br>
+  <br>
+          
+        <form>  
+        <center>
+        <h2> Welcome <i class="italic">{{user.patient.name}}</i></h2>
+        </center>  
+            <div class="container mt-5 mb-5">
+              <div class="row">
+                <div class="card imgcontainer">
+                  <div class="col ">
+                    <a href="{% url 'checkdisease' %}">
+                    <img  alt="Check Disease" src="{% static 'homepage/checkdisease.jpg' %}"  class="img">
+                    </a>
+                  </div>
+                </div>
+                <div class="card imgcontainer">
+                  <div class="col ">
+                    <a href="{% url 'payment:appoint' %}">
+                    <img  alt="View Appointment" src="{% static 'homepage/bookappoint.jpg' %}"  class="img">
+                    </a>
+                  </div>  
+                </div>
+                <div class="card imgcontainer">
+                  <div class="col ">
+                    <a href="{% url 'pconsultation_history' %}">
+                    <img  alt="Consult History" src="{% static 'homepage/consultation.jpg' %}"  class="img">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+  {% endif %}
+  
+  {% if user.doctor %}
+  <br>
+  <br>
+          
+        <form>  
+        <center>
+        <h2> Welcome <i class="italic">Dr. {{user.doctor.name}}</i></h2>
+        </center>  
+            <div class="container mt-5 mb-5">
+              <div class="row">
+                <div class="card imgcontainer">
+                  <div class="col ">
+                    <a href="{% url 'payment:drappoint' %}">
+                    <img  alt="View Appointment" src="{% static 'homepage/bookappoint.jpg' %}"  class="img">
+                    </a>
+                  </div>  
+                </div>
+                <div class="card imgcontainer">
+                  <div class="col ">
+                    <a href="{% url 'dconsultation_history' %}">
+                    <img  alt="Consult History" src="{% static 'homepage/consultation.jpg' %}"  class="img">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+  {% endif %}
+{% endif %}
+
+
+<!-- buttons area -->
 
 <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -96,19 +177,26 @@
           <div class="container mt-5 mb-5">
             <div class="row">
               <div class="col">
-                <a href="{% url 'sign_in_admin' %}">
-                <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
-                </a>
+                <div class="card">
+                  <a href="{% url 'sign_in_admin' %}">
+                  <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+                  </a>
+                </div>  
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <a href="{% url 'sign_in_doctor' %}">
+                  <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+                  </a>
+                </div>
               </div>
               <div class="col">
-                <a href="{% url 'sign_in_doctor' %}">
-                <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
-                </a>
-              </div>
-              <div class="col">
-                <a href="{% url 'sign_in_patient' %}">
-                <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
-                </a>
+                <div class="card">
+                  <a href="{% url 'sign_in_patient' %}">
+                  <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+                  </a>
+                </div>  
               </div>  
             </div>
           </div>
@@ -118,6 +206,7 @@
     </div>
   </div>
 </div>
+
 
 
 <!-- Login Section -->

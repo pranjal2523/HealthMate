@@ -30,7 +30,7 @@
             <table class="table table-hover table-bordered">
               <thead class="thead-dark">
                 <tr>
-                  <th>Doctor name</th>
+                  <th>Patient name</th>
                   <th>Disease</th>
                   <th>Booked Date</th>
                   <th>Appointment Date</th>
@@ -45,7 +45,7 @@
                {% for ap in appoint %}
                
                 <tr>
-                  <td>{{ap.doctor_name}}</td>
+                  <td>{{ap.patient_name}}</td>
                   <td>{{ap.diseaseinfo.diseasename}}</td>
                   <td>{{ap.booked_date}}</td>
                   <td>{{ap.appoint_date}}</td>
