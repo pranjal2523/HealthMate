@@ -16,7 +16,24 @@ make a new environment(recommended) and run...
 ### Dataset used - 
 https://www.kaggle.com/neelima98/disease-prediction-using-machine-learning
 
+### Screenshot of the HealthMate
+![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/ppt1.png?raw=true)
 ![](https://github.com/pranjal2523/HealthMate/blob/main/screenshots/ppt2.png?raw=true)
+
+<img src="https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pptpredictpage.png">
+
+<img src="https://github.com/pranjal2523/HealthMate/blob/main/screenshots/Screenshot%202023-05-26%20232103.png">
+
+<img src="https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pttpredictview.png">
+
+<img src="https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pttconsultview.png">
+
+<img src="https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pptbookapointview.png">
+
+<img src="https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pptdrconsultview.png">
+
+<img src="https://github.com/pranjal2523/HealthMate/blob/main/screenshots/pttchatview.png">
+
 
 
 ### ***Go to the [Readme.pdf](Readme.pdf) file for detailed information about the project & screenshots.***
